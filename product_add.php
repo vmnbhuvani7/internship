@@ -1,0 +1,21 @@
+
+<?php
+	
+	$conn=mysqli_connect("localhost","root","","spider");
+		$product_name=$_POST['product_name'];
+		$product_type=$_POST['product_type'];
+		$rate=$_POST['rate'];
+		$product_version=$_POST['product_version'];
+		$product_version_detail=$_POST['product_version_detail'];
+		$product_warrenty_month=$_POST['product_warrenty_month'];
+	
+
+	$qry="INSERT INTO `product_list` (`product_list_id`, `product_name`, `product_type`, `rate`, `product_version`, `product_version_detail`, `product_warrenty_month`) VALUES (NULL,'$product_name','$product_type','$rate','$product_version','$product_version_detail','$product_warrenty_month')";
+
+		mysqli_query($conn,$qry);
+
+header('Location:product_list.php');
+
+
+
+?>
